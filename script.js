@@ -44,7 +44,7 @@ gsap.from("nav", { opacity: 0, y: -20, duration: 1, delay: 0.5, ease: "power3.ou
 
 const sections = document.querySelectorAll('section:not(#hero)');
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new  IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             gsap.from(entry.target, { opacity: 0, y: 50, duration: 0.8, ease: "power3.out" });
@@ -72,4 +72,19 @@ window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
+
+// Close mobile menu when a link is clicked
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+    });
 });

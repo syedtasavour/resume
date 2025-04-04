@@ -266,3 +266,14 @@ footer {
         padding: 0.5rem 1rem;
     }
 }
+
+a {
+    color: #1e90ff; /* Change to any hex or color name you prefer */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff6600; /* Optional hover color */
+    text-decoration: underline;
+}
